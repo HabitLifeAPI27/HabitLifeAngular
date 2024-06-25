@@ -169,16 +169,18 @@ main {
 }
 
 .custom-form-field {
-    width: 100% !important; /* Asegura que los campos ocupen todo el ancho disponible */
+    width: 85% !important; /* Asegura que los campos ocupen todo el ancho disponible */
     max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra los campos en el contenedor */
 }
 
+/* Cambiar el color del botón */
 .custom-button {
-    width: 50% !important; /* Asegura que el botón ocupe todo el ancho disponible */
+    width: 50% !important;
+    background-color: #ff5722 !important; /* Cambia este color por el que prefieras */
+    color: #ffffff !important;
     max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el botón en el contenedor */
-    display: block; /* Asegura que el botón se comporte como un bloque */
 }
 
 

@@ -12,7 +12,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { MatSelectModule } from '@angular/material/select'; 
 import { FooterComponent } from '../shared/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import { FooterComponent } from '../shared/footer/footer.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatSelectModule,
+    HttpClientModule
   ],
+  providers: [AuthService],
   exports: [
     NavbarComponent,
     FooterComponent

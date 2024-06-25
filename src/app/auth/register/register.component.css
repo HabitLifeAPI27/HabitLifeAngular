@@ -4,10 +4,9 @@ body, html {
     font-family: 'Mulish', sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 125vh;
+    min-height: 160vh;
     margin: 0;
     height: 100%;
-    box-sizing: border-box;
 }
 
 main {
@@ -15,7 +14,6 @@ main {
     margin: 0 auto;
     text-align: center;
     flex: 1;
-    box-sizing: border-box;
 }
 
 .container {
@@ -170,20 +168,18 @@ main {
 }
 
 .custom-form-field {
-    width: 90% !important; /* Asegura que los campos ocupen todo el ancho disponible */
+    width: 85% !important; /* Asegura que los campos ocupen todo el ancho disponible */
     max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra los campos en el contenedor */
 }
 
+/* Cambiar el color del botón */
 .custom-button {
-    width: 40% !important; /* Asegura que el botón ocupe todo el ancho disponible */
+    width: 50% !important;
+    background-color: #ff5722 !important; /* Cambia este color por el que prefieras */
+    color: #ffffff !important;
     max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el botón en el contenedor */
-    display: block; /* Asegura que el botón se comporte como un bloque */
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+
