@@ -1,0 +1,22 @@
+
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Asegura que el footer esté al fondo de la página */
+}
+
+footer p {
+    display: inline;
+    margin: 0 15px;
+    font-size: 12px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12px;
+}

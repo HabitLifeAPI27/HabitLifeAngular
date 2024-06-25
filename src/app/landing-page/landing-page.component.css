@@ -1,0 +1,290 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Mulish', sans-serif;
+}
+
+#app-root {
+  height: 100%;
+}
+
+header {
+  background-color: #000;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+main {
+  min-height: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: #000000;
+  text-align: center;
+}
+
+#encabezado {
+  text-align: left;
+  background-color: rgba(255,255,255,.3);
+  background-image: url('/assets/bicicleta.jpg');
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+}
+
+#encabezado h2 {
+  font-size: 35px;
+  color: #fff;
+  padding: 5px 0;
+  margin-left: 40px;
+}
+
+#encabezado h4 {
+  font-size: 17px;
+  color: #fff;
+  margin-left: 45px;
+  font-weight: normal;
+}
+
+#encabezado a {
+  background-color: #96E500;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+#encabezado p {
+  font-size: 15px;
+  color: #fff;
+  padding: 40px 0;
+  margin-left: 30px;
+}
+
+#encabezado .opciones {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none; /* Elimina las viñetas de la lista */
+}
+
+li {
+  margin: 10px 0;
+}
+
+input[type="checkbox"] {
+  display: none; /* Oculta el checkbox nativo */
+}
+
+label.checkbox-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+label.checkbox-label::before {
+  content: " "; /* Espacio en blanco para el pseudo-elemento */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255); /* Color del cuadro cuando no está marcado */
+  border: 1px solid #888;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+input[type="checkbox"]:checked + label.checkbox-label::before {
+  background-color: rgb(102, 150, 102); /* Cambia el color del cuadro cuando se marca */
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  display: inline;
+  margin: 0 15px;
+  font-size: 12px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 12px;
+}
+
+nav {
+  background-color: #000;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.search-icon {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.menu-item {
+  margin: 0 10px;
+  background-color: #ff5c0f;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.menu-item:first-child {
+  margin-right: 10px;
+}
+
+.menu-item:nth-child(1),
+.menu-item:nth-child(2),
+.menu-item:nth-child(3),
+.menu-item:nth-child(4),
+.menu-item:nth-child(5) {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  max-width: 600px;
+}
+
+.column h1 {
+  font-size: 20px;
+  text-align: center;
+  color: #96E500;
+}
+
+.column p {
+  font-size: 15px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+}
+
+.habit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px; /* Reducir el padding superior e inferior */
+  background-color: #1e1e1e; /* Ajusta según el fondo que desees */
+  color: #fff;
+}
+
+.content-wrapper {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-container {
+  width: 55%;
+  justify-content: center;
+  align-items: center;
+}
+
+.habit-image {
+  max-width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 45px;
+}
+
+.text-container {
+  width: 35%;
+  padding: 20px;
+  text-align: left;
+}
+
+.text-container h2 {
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  line-height: 1.6;
+  color:rgb(201, 196, 196)
+}
+
+.recuadro {
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+.recuadro label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.recuadro input {
+  background-color: #96E500;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.boton-unirse {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+}
