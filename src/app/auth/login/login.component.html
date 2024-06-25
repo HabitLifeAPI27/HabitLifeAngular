@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+    <link rel="stylesheet" href="./login.component.css" type="text/css">
+</head>
+
+<body>
+    <app-navbar></app-navbar>
+    <main>
+        <div class="container">
+            <div class="column2">
+                <section>
+                    <h1>INICIAR SESIÓN EN HABIT LIFE</h1>
+                    <h2>INICIAR SESIÓN CON</h2>
+                    <div class="registro-buttons">
+                        <a class="facebook-button" href="https://www.facebook.com">
+                            <span><img src="assets/facebook.png" alt="Logo de Facebook" width="25" height="25"></span>
+                            Facebook
+                        </a>
+
+                        <a class="google-button" href="https://accounts.google.com">
+                            <span><img src="assets/gmail icono.png" alt="Logo de Google" width="25" height="25"></span>
+                            Google
+                        </a>
+                    </div>
+
+                    <h3>O</h3>
+               
+                        <div class="container py-5">
+                            <div class="row justify-content-center my-5">
+                                <div class="col-md-6 col-lg-4">
+                                    <form [formGroup]="form" (ngSubmit)="login()">
+                                        <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput type="email" placeholder="Email" formControlName="email">
+                                            <mat-error *ngIf="controlHasError('email', 'required')">
+                                                Este campo es obligatorio
+                                            </mat-error>
+                                            <mat-error *ngIf="controlHasError('email', 'email')">
+                                                Ingrese un email válido
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                                            <mat-label>Contraseña</mat-label>
+                                            <input matInput type="password" placeholder="Contraseña" formControlName="password">
+                                            <mat-error *ngIf="controlHasError('password', 'required')">
+                                                Este campo es obligatorio
+                                            </mat-error>
+                                        </mat-form-field>    
+                                    </form>
+                                </div>
+                                <button type="submit" class="w-100 custom-button" mat-raised-button color="primary" [disabled]="form.invalid">
+                                    Ingresar
+                                </button>
+                            </div>
+                        </div>
+    
+                </section>
+            </div>
+            <div class="column3">
+                <section>
+                    <h1>¿NO ERES MIEMBRO?</h1>
+                    <h2>Regístrate ahora y no te pierdas de las miles de herramientas que ofrecemos</h2>
+                    <a href="/register" class="menu-item">Registro</a>
+                </section>
+            </div>
+        </div>
+    </main>
+    <app-footer></app-footer>
+</body>
+
+</html>
