@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Eliminar Rutina de Ejercicios</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+</head>
+
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="frase">
+            <h2>Eliminar Rutina de Ejercicios</h2>
+        </section>
+        <div class="container">
+            <div class="routines-list-container">
+                <h3>Tus Rutinas de Ejercicios</h3>
+                <ul>
+                    <li *ngFor="let routine of userRoutines">
+                        {{ routine.name }}
+                        <button mat-button color="warn" (click)="deleteRoutine(routine)">Eliminar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+
+</html>
