@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Eliminar Plan Nutricional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+    <link rel="stylesheet" href="eliminar-plan-nutricional.component.css">
+</head>
+
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="frase">
+            <h2>Eliminar Plan Nutricional</h2>
+        </section>
+        <div class="container">
+            <div class="plans-list-container">
+                <h3>Tus Planes Nutricionales</h3>
+                <ul>
+                    <li *ngFor="let plan of userPlans">
+                        {{ plan.name }}
+                        <button mat-button color="warn" (click)="deletePlan(plan)">Eliminar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+
+</html>

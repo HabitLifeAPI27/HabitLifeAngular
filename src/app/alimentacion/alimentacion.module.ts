@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { EditarPlanNutricionalComponent } from './editar-plan-nutricional/editar-plan-nutricional.component';
+import { EliminarPlanNutricionalComponent } from './eliminar-plan-nutricional/eliminar-plan-nutricional.component';
 
 
 
@@ -18,7 +19,8 @@ import { EditarPlanNutricionalComponent } from './editar-plan-nutricional/editar
   declarations: [
     AlimentacionComponent,
     CrearPlanNutricionalComponent,
-    EditarPlanNutricionalComponent
+    EditarPlanNutricionalComponent,
+    EliminarPlanNutricionalComponent
   ],
   imports: [
     CommonModule,
