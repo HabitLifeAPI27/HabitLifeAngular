@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Editar Plan Nutricional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+    <link rel="stylesheet" href="editar-plan-nutricional.component.css">
+</head>
+
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="frase">
+            <h2>Editar Plan Nutricional</h2>
+        </section>
+        <div class="container">
+            <div class="form-container">
+                <form [formGroup]="editPlanForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Nombre del Plan</mat-label>
+                        <input matInput type="text" placeholder="Nombre del Plan" formControlName="planName">
+                        <mat-error *ngIf="editPlanForm.get('planName')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput placeholder="Descripción" formControlName="description"></textarea>
+                        <mat-error *ngIf="editPlanForm.get('description')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Alimentos Requeridos</mat-label>
+                        <mat-select formControlName="requiredFoods" multiple>
+                            <mat-option *ngFor="let food of foods" [value]="food">{{food}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="editPlanForm.get('requiredFoods')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Inicio</mat-label>
+                        <input matInput [matDatepicker]="startDate" placeholder="Fecha de Inicio" formControlName="startDate">
+                        <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                        <mat-datepicker #startDate></mat-datepicker>
+                        <mat-error *ngIf="editPlanForm.get('startDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Fin</mat-label>
+                        <input matInput [matDatepicker]="endDate" placeholder="Fecha de Fin" formControlName="endDate">
+                        <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                        <mat-datepicker #endDate></mat-datepicker>
+                        <mat-error *ngIf="editPlanForm.get('endDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <button type="submit" class="w-100 custom-button" mat-raised-button color="primary" [disabled]="!editPlanForm.valid">
+                        Guardar Cambios
+                    </button>
+                </form>
+            </div>
+            <div class="plans-list-container">
+                <h3>Tus Planes Nutricionales</h3>
+                <ul>
+                    <li *ngFor="let plan of userPlans" (click)="selectPlan(plan)">{{plan.nombre}}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+
+</html>

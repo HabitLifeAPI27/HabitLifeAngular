@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Objetivos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+</head>
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="header">
+            <h2>Objetivos</h2>
+        </section>
+        <div class="container">
+            <div class="left-column">
+                <section>
+                    <h3>Registrar Alimentos y Bebidas Diarios</h3>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+                        <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                            <mat-label>Alimento/Bebida</mat-label>
+                            <input matInput type="text" placeholder="Alimento/Bebida" formControlName="item">
+                            <mat-error *ngIf="registerForm.get('item')?.hasError('required')">
+                                Este campo es obligatorio
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput type="number" placeholder="Cantidad" formControlName="quantity">
+                            <mat-error *ngIf="registerForm.get('quantity')?.hasError('required')">
+                                Este campo es obligatorio
+                            </mat-error>
+                        </mat-form-field>
+                        <button type="submit" class="custom-button" mat-raised-button color="primary" [disabled]="!registerForm.valid">
+                            Registrar
+                        </button>
+                    </form>
+                </section>
+            </div>
+            <div class="right-column">
+                <section id="goal-management">
+                    <div class="goal-item">
+                        <a href="/crear-objetivos" class="menu-item">
+                            <img src="/assets/crear rutina.png" alt="Crear Objetivo">
+                            <h4>Crear Objetivo</h4>
+                            <p>Aquí, podrás crear tus objetivos para ajustarlos a tus necesidades.</p>
+                        </a>
+                    </div>
+                    <div class="goal-item">
+                        <a href="/editar-objetivos" class="menu-item">
+                            <img src="/assets/Editar plan.png" alt="Editar Objetivo">
+                            <h4>Editar Objetivo</h4>
+                            <p>Se puede ingresar a la edición de sus objetivos sea personalmente o con su nutricionista personal.</p>
+                        </a>   
+                    </div>
+                    <div class="goal-item">
+                        <a href="/eliminar-objetivos" class="menu-item">
+                            <img src="/assets/Eliminar plan.png" alt="Eliminar Objetivo">
+                            <h4>Eliminar Objetivo</h4>
+                            <p>Eliminación de los objetivos que seleccione de su cuenta.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+</html>

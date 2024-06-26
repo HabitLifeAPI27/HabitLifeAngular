@@ -1,0 +1,85 @@
+body, html {
+    background: #000000;
+    color: #fff;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 110vh;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#frase {
+    text-align: left;
+    background-size: cover;
+    background-image: url('/assets/fondo alimentacion.jpg');
+    padding: 80px 0;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#frase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+    z-index: 1;
+}
+
+
+#frase h2 {
+    font-size: 50px;
+    color: #fff;
+    background-color: transparent;
+    padding: 40px 0;
+    margin-left: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.column {
+    flex: 0 1 calc(33.333% - 20px);
+    padding: 10px;
+}
+
+.column h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #96E500;
+}
+
+.column p {
+    font-size: 12px;
+    text-align: center;
+}
+
+.column a {
+    text-decoration: none;
+}

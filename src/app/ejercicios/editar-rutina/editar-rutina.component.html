@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Editar Rutina de Ejercicios</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+</head>
+
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="frase">
+            <h2>Editar Rutina de Ejercicios</h2>
+        </section>
+        <div class="container">
+            <div class="form-container">
+                <form [formGroup]="editRoutineForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Nombre de la Rutina</mat-label>
+                        <input matInput type="text" placeholder="Nombre de la Rutina" formControlName="routineName">
+                        <mat-error *ngIf="editRoutineForm.get('routineName')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput placeholder="Descripción" formControlName="description"></textarea>
+                        <mat-error *ngIf="editRoutineForm.get('description')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>N° Series</mat-label>
+                        <input matInput type="number" placeholder="N° Series" formControlName="numSeries">
+                        <mat-error *ngIf="editRoutineForm.get('numSeries')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>N° Repeticiones</mat-label>
+                        <input matInput type="number" placeholder="N° Repeticiones" formControlName="numRepetitions">
+                        <mat-error *ngIf="editRoutineForm.get('numRepetitions')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Inicio</mat-label>
+                        <input matInput [matDatepicker]="startDate" placeholder="Fecha de Inicio" formControlName="startDate">
+                        <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                        <mat-datepicker #startDate></mat-datepicker>
+                        <mat-error *ngIf="editRoutineForm.get('startDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Fin</mat-label>
+                        <input matInput [matDatepicker]="endDate" placeholder="Fecha de Fin" formControlName="endDate">
+                        <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                        <mat-datepicker #endDate></mat-datepicker>
+                        <mat-error *ngIf="editRoutineForm.get('endDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <button type="submit" class="w-100 custom-button" mat-raised-button color="primary" [disabled]="!editRoutineForm.valid">
+                        Guardar Cambios
+                    </button>
+                </form>
+            </div>
+            <div class="routines-list-container">
+                <h3>Tus Rutinas de Ejercicios</h3>
+                <ul>
+                    <li *ngFor="let routine of userRoutines" (click)="selectRoutine(routine)">{{routine.nombre}}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+
+</html>

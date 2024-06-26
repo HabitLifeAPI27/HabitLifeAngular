@@ -1,0 +1,88 @@
+body, html {
+    background: linear-gradient(to top, #96E500 0%, #000000 85%);
+    color: #fff;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 130vh;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1;
+
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#frase {
+    text-align: left;
+    background-size: cover;
+    background-image: url('/assets/fondo-nutricional.jpg');
+    padding: 0 0;
+    position: relative;
+}
+
+#frase h2 {
+    font-size: 50px;
+    color: #fff;
+    background-color: transparent;
+    padding: 0 0;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.form-container {
+    flex: 1;
+    max-width: 70%;
+}
+
+.plans-list-container {
+    flex: 1;
+    max-width: 30%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.plans-list-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plans-list-container li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.plans-list-container li:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.custom-form-field {
+    width: 100%;
+}
+
+.custom-button {
+    width: 100% !important;
+    background-color: #ff5c0f !important;
+    color: #000 !important;
+}

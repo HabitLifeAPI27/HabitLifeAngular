@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Editar Objetivo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+</head>
+
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="header">
+            <h2>Editar Objetivo</h2>
+        </section>
+        <div class="container">
+            <div class="form-container">
+                <form [formGroup]="editGoalForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Nombre del Objetivo</mat-label>
+                        <input matInput type="text" placeholder="Nombre del Objetivo" formControlName="goalName">
+                        <mat-error *ngIf="editGoalForm.get('goalName')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput placeholder="Descripción" formControlName="description"></textarea>
+                        <mat-error *ngIf="editGoalForm.get('description')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Tipo de Objetivo</mat-label>
+                        <mat-select formControlName="goalType">
+                            <mat-option value="EJERCICIO">Ejercicio</mat-option>
+                            <mat-option value="ALIMENTACION">Alimentación</mat-option>
+                            <mat-option value="ESTUDIOS">Estudios</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="editGoalForm.get('goalType')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status">
+                            <mat-option value="PENDIENTE">Pendiente</mat-option>
+                            <mat-option value="COMPLETADO">Completado</mat-option>
+                            <mat-option value="FALLIDO">Fallido</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="editGoalForm.get('status')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Frecuencia</mat-label>
+                        <mat-select formControlName="frequency">
+                            <mat-option value="DIARIA">Diaria</mat-option>
+                            <mat-option value="SEMANAL">Semanal</mat-option>
+                            <mat-option value="MENSUAL">Mensual</mat-option>
+                            <mat-option value="ANUAL">Anual</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="editGoalForm.get('frequency')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Inicio</mat-label>
+                        <input matInput [matDatepicker]="startDate" placeholder="Fecha de Inicio" formControlName="startDate">
+                        <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                        <mat-datepicker #startDate></mat-datepicker>
+                        <mat-error *ngIf="editGoalForm.get('startDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                        <mat-label>Fecha de Fin</mat-label>
+                        <input matInput [matDatepicker]="endDate" placeholder="Fecha de Fin" formControlName="endDate">
+                        <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                        <mat-datepicker #endDate></mat-datepicker>
+                        <mat-error *ngIf="editGoalForm.get('endDate')?.hasError('required')">
+                            Este campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <button type="submit" class="w-100 custom-button" mat-raised-button color="primary" [disabled]="!editGoalForm.valid">
+                        Guardar Cambios
+                    </button>
+                </form>
+            </div>
+            <div class="goals-list-container">
+                <h3>Tus Objetivos</h3>
+                <ul>
+                    <li *ngFor="let goal of userGoals" (click)="selectGoal(goal)">{{goal.nombre}}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+
+</html>
