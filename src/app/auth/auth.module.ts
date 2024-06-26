@@ -11,20 +11,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { MatSelectModule } from '@angular/material/select'; 
-import { FooterComponent } from '../shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent,
-    NavbarComponent,
-    FooterComponent
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -38,12 +34,10 @@ import { AuthService } from '../services/auth.service';
     MatSidenavModule,
     MatListModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [AuthService],
-  exports: [
-    NavbarComponent,
-    FooterComponent
-  ]
+  exports: []
 })
 export class AuthModule { }
