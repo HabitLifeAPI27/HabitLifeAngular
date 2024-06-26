@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HabitLife</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
-  <link rel="stylesheet" href="./landing-page.component.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
 </head>
+
 <body>
-  <header>
-    <img src="assets/logo habit life.png" height="50" style="margin-left: 20px;">
-    <i class="fas fa-search search-icon"></i>
-    <nav>
-      <div class="menu-bar">
-        <a href="#" class="menu-item">HabitLife</a>
-        <a href="Alimentacion/malimentacion.html" class="menu-item">Alimentacion</a>
-        <a href="Estudio/Estudio.html" class="menu-item">Estudio</a>
-        <a href="#" class="menu-item">Ejercicios</a>
-        <a href="https://www.facebook.com/groups/954492926210624/" class="menu-item">Comunidad</a>
-        <a routerLink="/login" class="menu-item">Iniciar Sesión</a>
-        <a routerLink="/register" class="menu-item">Registro</a>
-      </div>
-    </nav>
-  </header>
+  <app-navbar></app-navbar>
   <main>
     <section id="encabezado">
       <h2>"Navega, Inspira y Actúa"</h2>
       <h4>Tu viaje de transformación empieza ahora.</h4>
-      <a href="InicioSesion.html">COMIENZA AHORA</a>
+      <a routerLink="/register" class="menu-item">COMIENZA AHORA</a>
     </section>
     <div class="container">
       <div class="column">
@@ -56,14 +43,6 @@
       </div>
     </section>
   </main>
-  <footer>
-    <img src="assets/logo habit life.png" height="30" style="margin-right: 20px;">
-    <a href="#">Acerca de</a>
-    <a href="https://www.facebook.com/groups/954492926210624/" class="menu-item">Comunidad</a>
-    <a href="#">Community</a>
-    <a href="#">Términos y condiciones</a>
-    <a href="#">Ayuda</a>
-    <p>2023 HabitLife. Todos los derechos reservados.</p>
-  </footer>
+  <app-footer></app-footer>
 </body>
 </html>

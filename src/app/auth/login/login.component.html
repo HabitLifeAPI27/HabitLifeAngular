@@ -36,6 +36,17 @@
                                 <div class="col-md-6 col-lg-4">
                                     <form [formGroup]="form" (ngSubmit)="login()">
                                         <mat-form-field class="mb-3 custom-form-field" appearance="outline">
+                                            <mat-label>Tipo de Cuenta</mat-label>
+                                            <mat-select formControlName="accountType">
+                                                <mat-option value="Usuario">Usuario</mat-option>
+                                                <mat-option value="Profesional">Profesional</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="controlHasError('accountType', 'required')">
+                                                Este campo es obligatorio
+                                            </mat-error>
+                                        </mat-form-field>
+                                        
+                                        <mat-form-field class="mb-3 custom-form-field" appearance="outline">
                                             <mat-label>Email</mat-label>
                                             <input matInput type="email" placeholder="Email" formControlName="email">
                                             <mat-error *ngIf="controlHasError('email', 'required')">
