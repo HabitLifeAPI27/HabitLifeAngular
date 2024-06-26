@@ -20,7 +20,7 @@ import { EliminarPlanNutricionalComponent } from './eliminar-plan-nutricional/el
     AlimentacionComponent,
     CrearPlanNutricionalComponent,
     EditarPlanNutricionalComponent,
-    EliminarPlanNutricionalComponent
+    EliminarPlanNutricionalComponent,
   ],
   imports: [
     CommonModule,

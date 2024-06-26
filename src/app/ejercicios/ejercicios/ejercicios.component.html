@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLife - Ejercicios</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,700">
+</head>
+<body>
+    <app-navbar></app-navbar> <!-- Aquí se incluye el componente del navbar -->
+
+    <main>
+        <section id="header">
+            <h2>Ejercicios</h2>
+        </section>
+        <div class="container">
+            <div class="left-column">
+                <section id="routines">
+                    <h3>Mis Rutinas</h3>
+                    <div class="routine-container">
+                        <button *ngFor="let routine of routines" class="routine-button">
+                            {{ routine.name }}
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <a href="/crear-rutina" class="menu-item">
+                            <button (click)="createRoutine()">Crear Rutina</button>
+                        </a>
+                        <a href="/editar-rutina" class="menu-item">
+                            <button (click)="editRoutine()">Editar Rutina</button>
+                        </a>
+                        <a href="/eliminar-rutina" class="menu-item">
+                            <button (click)="deleteRoutine()">Eliminar Rutina</button>
+                        </a>
+                    </div>
+                </section>
+                <section id="quote">
+                    <p>"La motivación te impulsa, pero la disciplina te hace llegar."</p>
+                    <button (click)="goToAnotherSection()">Ir a Otra Sección</button>
+                </section>
+            </div>
+            <div class="right-column">
+                <section>
+                    <h3>Videos de Ejercicios</h3>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/6hW1lU0zSXw" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/9rTnTI2Jg78" frameborder="0" allowfullscreen></iframe>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer> <!-- Aquí se incluye el componente del footer -->
+</body>
+</html>

@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AlimentacionModule } from './alimentacion/alimentacion.module';
 import { SharedModule } from './shared/shared.module';
+import { EjercicioModule } from './ejercicios/ejercicios.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     AuthModule,
     AlimentacionModule,
+    EjercicioModule,
     HttpClientModule,
     SharedModule
   ],
